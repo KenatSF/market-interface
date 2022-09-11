@@ -5,11 +5,14 @@ import { useState, useCallback, useEffect } from "react";
 import KronosTokenAddress from "../components/kronosTokenAddress";
 import useMarketPlace from "../src/hooks/useMarketPlace";
 
+import { useRouter  } from 'next/router'
+
 export default function Kronos() {
     const [ isClaimed, setIsClaimed] = useState(false);
     const { active, account } = useWeb3React(); // Hacerla sensible al cambio de cuentas con useEffect
     const [freeTokensAmount, setfreeTokensAmount] = useState();
     const toast = useToast();
+    const router = useRouter();
 
     const marketPlace = useMarketPlace();
 
@@ -42,6 +45,7 @@ export default function Kronos() {
                 description: '',
                 status: 'success'
             }) 
+            router.push('ROUTE').then(() => window.location.reload())
         }).on("error", (error) => {
             setIsClaimed(false);
             toast({
@@ -56,7 +60,7 @@ export default function Kronos() {
 
     if (!active) return <KronosTokenAddress></KronosTokenAddress>;
 
-    if (!((freeTokensAmount/1e18) > 29)) return <KronosTokenAddress></KronosTokenAddress>;
+    if (!((freeTokensAmount/1e18) > 0)) return <KronosTokenAddress></KronosTokenAddress>;
 
     return (
         <>
@@ -71,7 +75,7 @@ export default function Kronos() {
                         onClick={claim}
                         isLoading={isClaimed}
                     >
-                        Claim 10 free KRN tokens
+                        Claim 10,000 KRN tokens
                     </Button>
                 </Center>
                 <Center h='100px'>

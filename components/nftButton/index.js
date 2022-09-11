@@ -24,7 +24,7 @@ const NftButton = ({ tokenId, sold }) => {
         if (kronos) {
             setIsApproved(false);
             const answer = await kronos.methods.allowance(account, address[chainId]).call();
-            if ((answer / 1e18) >= 10) setIsApproved(true);
+            if ((answer / 1e18) >= 10000) setIsApproved(true);
         }
     }, [kronos, account, chainId]);
 
@@ -34,7 +34,7 @@ const NftButton = ({ tokenId, sold }) => {
 
     const approve = () => {
         setIsClaimed(true);
-        kronos.methods.approve(address[chainId], String(240 * 1e18)).send({
+        kronos.methods.approve(address[chainId], String(10000 * 1e18)).send({
             from: account
         })
             .on("transactionHash", (txHash) => {

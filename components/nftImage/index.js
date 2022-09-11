@@ -52,7 +52,7 @@ const NftImage = ({ tokenId, name, description, image, sold }) => {
           {description}
         </Text>
         <Text>
-          Cost: 10 KRN
+          Cost: 10,000 KRN
         </Text>
         <NftButton tokenId={tokenId} sold={sold}></NftButton>
       </Stack>

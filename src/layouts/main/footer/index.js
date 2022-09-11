@@ -30,8 +30,9 @@ import {
             <Text>
               {new Date().getFullYear()} NFT market place, Powered by
               <Link ml={1} href="https://github.com/KenatSF">
-                Kenat Flores
+                Kenat Flores |
               </Link>
+              | You can buy just one NFT.
             </Text>
           </Container>
         </Box>

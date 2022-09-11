@@ -14,8 +14,7 @@ import { useWeb3React } from "@web3-react/core";
 import { useState } from "react";
 
 export default function KronosTokenAddress({ children }) {
-    const { chainId } = useWeb3React();
-    const [value, setValue] = useState('0x51B49afF5d05e36eD50a38D0c3bA575B6F88dDF7')
+    const [value, setValue] = useState('0x19bd842C4EF5F837600f17a1949c0Ed729379Eae')
     const { hasCopied, onCopy } = useClipboard(value)
 
     return (

@@ -50,16 +50,13 @@ const MainLayout = ({ children }) => {
           <HStack spacing={8} alignItems={"center"}>
             <Flex alignItems="center">
               <Image src="./favicon.ico" width="80px" />
-              <Heading size="md" color="purple" mt={0.2} ml={1}>
-                Kronofungible
-              </Heading>
             </Flex>
             <HStack
               as={"nav"}
               spacing={4}
               display={{ base: "none", md: "flex" }}
             >
-              <Link href="/">Home</Link>
+              <Link href="/">Kronofungible</Link>
               <Link href="/kronos">Kronos</Link>
               
             </HStack>

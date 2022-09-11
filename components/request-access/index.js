@@ -11,8 +11,7 @@ import {
       <Alert status="error">
         <AlertIcon />
         <AlertTitle mr={2}>Connect your wallet</AlertTitle>
-        <AlertDescription>to get access!</AlertDescription>
-        <CloseButton position="absolute" right="8px" top="8px" />
+        <AlertDescription>Metamask in Polygon</AlertDescription> 
       </Alert>
     );
   };
