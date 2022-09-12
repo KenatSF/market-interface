@@ -28,10 +28,7 @@ import {
             align={{ base: "center", md: "center" }}
           >
             <Text>
-              {new Date().getFullYear()} NFT market place, Powered by
-              <Link ml={1} href="https://github.com/KenatSF">
-                Kenat Flores |
-              </Link>
+              {new Date().getFullYear()} NFT market place, Powered by Vercel
               | You can buy just one NFT.
             </Text>
           </Container>

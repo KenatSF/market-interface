@@ -71,7 +71,7 @@
             onClick={connect}
             disabled={isUnsupportedChain}
           >
-            {isUnsupportedChain ? "Red no soportada" : "Conectar wallet"}
+            {isUnsupportedChain ? "Chain not supported" : "Connect Wallet"}
           </Button>
         )}
       </Flex>

@@ -10,7 +10,7 @@ import { useRouter  } from 'next/router'
 const { address } = marketPlaceArtifact;
 
 const NftButton = ({ tokenId, sold }) => {
-    const { account, chainId } = useWeb3React();
+    const { account, chainId, library } = useWeb3React();
     const [isClaimed, setIsClaimed] = useState(false);
     const [isSold, setIsSold] = useState(sold);
     const [isApproved, setIsApproved] = useState(false);
@@ -34,7 +34,7 @@ const NftButton = ({ tokenId, sold }) => {
 
     const approve = () => {
         setIsClaimed(true);
-        kronos.methods.approve(address[chainId], String(10000 * 1e18)).send({
+        kronos.methods.approve(address[chainId], library.utils.toWei('10000', 'ether')).send({
             from: account
         })
             .on("transactionHash", (txHash) => {
